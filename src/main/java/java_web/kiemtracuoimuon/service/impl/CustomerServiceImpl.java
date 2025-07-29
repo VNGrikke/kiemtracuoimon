@@ -38,6 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
                 .email(request.getEmail())
                 .phone(request.getPhone())
                 .isLogin(false)
+                .status(true)
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
         userRepository.save(customer);
