@@ -54,7 +54,7 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
         customer.setIsLogin(true);
-
+        userRepository.save(customer);
         String token = jwtUtil.generateToken(customer.getEmail());
         return new AuthResponse(token, token);
     }
